@@ -12,10 +12,10 @@ include_once 'php-action/db-connect.php';
         <table class="stripped">
             <thead>
                 <tr>
-                    <th>Nome:</th>
-                    <th>Sobrenome:</th>
-                    <th>Email:</th>
-                    <th>Idade:</th>
+                    <th>Nome</th>
+                    <th>Sobrenome</th>
+                    <th>Email</th>
+                    <th>Idade</th>
 
                 </tr>
                 
