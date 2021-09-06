@@ -7,7 +7,7 @@ include_once 'php-action/db-connect.php';
 ?>
 <div class="row">
     <div class="col s12 m6 push-m3">
-        <h3 class="light"> Clientes cadastrados na Base de Dados MYSQL </h3>
+        <h3 class="light"> Clientes cadastrados no Banco de Dados </h3>
 
         <table class="stripped">
             <thead>
