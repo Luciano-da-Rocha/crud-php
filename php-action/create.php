@@ -5,11 +5,15 @@ session_start();
 require_once 'db-connect.php';
 
 if(isset($_POST['btn-cadastrar'])):
-    //filtrando os dados inseridos nos formularios contra SQL injection
-    $nome = mysqli_escape_string($connect, $_POST['nome']);
-    $sobrenome = mysqli_escape_string($connect, $_POST['sobrenome']);
-    $email = mysqli_escape_string($connect, $_POST['email']);
-    $idade = mysqli_escape_string($connect, $_POST['idade']);
+    
+        $idade = mysqli_escape_string($connect, $_POST['idade']);
+        //filtrando os dados inseridos nos formularios contra SQL injection
+        $nome = mysqli_escape_string($connect, $_POST['nome']);
+        $sobrenome = mysqli_escape_string($connect, $_POST['sobrenome']);
+        $email = mysqli_escape_string($connect, $_POST['email']);
+    
+    
+    
 
     // inserindo os dados por meio de uma query no BD. A query é guardada numa variavel
     $sql = "INSERT INTO clientes (nome, sobrenome, email, idade) VALUES ('$nome','$sobrenome','$email','$idade')";
@@ -19,6 +23,7 @@ if(isset($_POST['btn-cadastrar'])):
     else:
         header('Location: ../index.php?erro');
         $_SESSION['mensagem'] = "Erro ao cadastrar!";
+        
     endif;
 endif;
 

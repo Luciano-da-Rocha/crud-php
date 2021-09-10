@@ -17,11 +17,11 @@ include_once 'includes/header.php';
         <label for="sobrenome">Sobrenome</label>
     </div>
     <div class="input-field col s12">
-        <input type="text" name="email" id="email">
+        <input type="email" name="email" id="email">
         <label for="email">Email</label>
     </div>
     <div class="input-field col s12">
-        <input type="text" name="idade" id="idade">
+        <input type="number" name="idade" id="idade">
         <label for="idade">Idade</label>
     </div>
     <button type="submit" name="btn-cadastrar" class="btn">Cadastrar</button>
