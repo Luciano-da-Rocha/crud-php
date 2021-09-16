@@ -48,7 +48,23 @@ include_once 'php-action/db-connect.php';
                     <td><?php echo $dados['email']; ?></td>
                     <td><?php echo $dados['idade']; ?></td>
                     <td><a href="editar.php?id=<?php echo $dados['id'];?>" class="btn-floating orange"><i class="material-icons">edit</i></a></td>
-                    <td><a href="" class="btn-floating black"><i class="material-icons">delete</i></a></td>
+                    <!-- adicionando o modal estando no look tem q enfiar o php no href-->
+                    <td><a href="#modal<? echo $dados['id'];?>" class="btn-floating black modal-trigger"><i class="material-icons">delete</i></a></td>
+
+                    <!-- Modal Structure -->
+  <div id="modal<? echo $dados['id'];?>" class="modal">
+    <div class="modal-content">
+      <h4>Atenção!</h4>
+      <p>Deseja mesmo deletar os dados?</p>
+    </div>
+    <div class="modal-footer">
+      
+      <form action="php-action/delete.php" method="POST"><input type="hidden" name="id" value="<?php echo $dados['id']?>"><button type="submit" name="btn-deletar" class="btn red">Sim, continuar</button>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancelar</a></form>
+      
+    </div>
+  </div>
+
                 </tr>
                 <?php endwhile; ?>
             </tbody>

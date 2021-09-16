@@ -18,6 +18,7 @@ endif;
     <div class="col s12 m6 push-m3">
         <h3 class="light">Editar Cliente</h3>
 <form action="php-action/update.php" method="POST">
+    <input type="hidden" name ="id" value = "<?php echo $dados['id'];?>">
     <div class="input-field col s12">
         <input type="text" name="nome" id="nome" value="<?php echo $dados['nome'];?>">
         <label for="nome">Nome</label>
@@ -34,7 +35,7 @@ endif;
         <input type="number" name="idade" id="idade" value="<?php echo $dados['idade'];?>">
         <label for="idade">Idade</label>
     </div>
-    <button type="submit" name="btn-cadastrar" class="btn">Atualizar</button>
+    <button type="submit" name="btn-editar" class="btn">Atualizar</button>
     <a href="index.php" type="submit" class="btn orange">Lista de clientes</a>
 </form>
        
