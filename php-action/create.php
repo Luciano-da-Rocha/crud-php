@@ -4,13 +4,24 @@ session_start();
 //conectando ao BD
 require_once 'db-connect.php';
 
+// criando uma função para evitar xss
+
+function clear($input){
+    global $connect;
+    //protegendo do SQL injection
+    $var = mysqli_escape_string($connect, $input);
+    // protegendo do xss
+    $var = htmlspecialchars($var);
+    return $var;
+}
+
 if(isset($_POST['btn-cadastrar'])):
     
-        $idade = mysqli_escape_string($connect, $_POST['idade']);
+        $idade = clear($_POST['idade']);
         //filtrando os dados inseridos nos formularios contra SQL injection
-        $nome = mysqli_escape_string($connect, $_POST['nome']);
-        $sobrenome = mysqli_escape_string($connect, $_POST['sobrenome']);
-        $email = mysqli_escape_string($connect, $_POST['email']);
+        $nome = clear($_POST['nome']);
+        $sobrenome = clear($_POST['sobrenome']);
+        $email = clear($_POST['email']);
     
     
     
